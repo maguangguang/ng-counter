@@ -1,0 +1,81 @@
+{
+  "root": true,
+  "ignorePatterns": [
+    "projects/**/*",
+    "src/**/*.html"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "@typescript-eslint/naming-convention": [
+      "error",
+      { "selector": "default", "format": ["camelCase"] },
+      { "selector": "typeLike", "format": ["PascalCase"] }
+    ],
+    "semi": "off",
+    "@typescript-eslint/semi": ["error", "never"],
+    "block-scoped-var": "error",
+    "no-var": "error",
+    "indent": [2, 2],
+    "prefer-const": "error",
+    "prefer-arrow-callback": "error",
+    "quotes": ["warn", "single", { "avoidEscape": true }],
+    "no-trailing-spaces": "error",
+    "eol-last": "error",
+    "eqeqeq": "error"
+  },
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@angular-eslint/ng-cli-compat",
+        "plugin:@angular-eslint/ng-cli-compat--formatting-add-on",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "rules": {
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ],
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/no-use-before-define": "off",
+        "@typescript-eslint/no-warning-comments": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/ban-types": "off",
+        "node/no-missing-import": "off",
+        "node/no-empty-function": "off",
+        "node/no-unsupported-features/es-syntax": "off",
+        "node/no-missing-require": "off",
+        "node/shebang": "off",
+        "no-dupe-class-members": "off",
+        "require-atomic-updates": "off"
+      },
+      "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+      }
+    }
+  ]
+}
