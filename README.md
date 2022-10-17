@@ -1,27 +1,26 @@
-# NgCounter
+# Angular step by step
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
+## Requirement
+* create an angular project, and do all practices in the project.
+* one git commit one practice.
 
-## Development server
+## Practices
+1. As a User, I want to see a `+` button and a text `number: 0` aside the button, when I click the `+` button, then I can see the text `number: 1` instead of `number: 0`.
+2. As a User, I want a new `-` button aside to text `number: 0`, when I click the `-` button, then I can see the text `number: -1` instead of `number: 0`.
+3. As a User, I want `-` button disappear when the number in text is less than 0, and the `-` button appear again when the number is greater than or equals to 0.
+4. As a User, I want `+` button disappear when the number in text is greater than 10, and the `+` button appear again when the  the number is less than or equals to 10.
+5. As a User, I want background color of the text 'number: *' to be green ,when the number in text is less than 0.
+6. As a User, I want background color of the text 'number: *' to be red, when the number in text is greater than 10.
+7. As a User, I want background color of the text 'number: *' to be white, when the number in text is greater than 0 and less than or equals to 10.
+8. As a User, I want a new `reset` button aside to `-` button, when I click the `reset` button, then I can see the text is `number: 0`.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Tips 
+### how to install angular CLI
+-  `npm install -g @angular/cli`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### how to create angular project
+- `ng new angular-counter`
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### how to create a new component
+- `ng generate component counter`
