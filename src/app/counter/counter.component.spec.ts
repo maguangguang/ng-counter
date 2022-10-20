@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CounterComponent } from './counter.component';
+import {CounterComponent} from './counter.component';
 
 describe('CounterComponent', () => {
   let component: CounterComponent;
@@ -8,7 +8,7 @@ describe('CounterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CounterComponent ]
+      declarations: [CounterComponent]
     }).compileComponents();
 
     fixture = TestBed.createComponent(CounterComponent);
@@ -18,5 +18,11 @@ describe('CounterComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should add number by 1 when click button +', () => {
+    component.num = 0;
+    component.onClick();
+    expect(component.num).toEqual(1);
   });
 });
