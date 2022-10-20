@@ -22,7 +22,13 @@ describe('CounterComponent', () => {
 
   it('should add number by 1 when click button +', () => {
     component.num = 0;
-    component.onClick();
+    component.onPlusClick();
     expect(component.num).toEqual(1);
+  });
+
+  it('should decrease number by 1 when click button +', () => {
+    component.num = 0;
+    component.onMinusClick();
+    expect(component.num).toEqual(-1);
   });
 });

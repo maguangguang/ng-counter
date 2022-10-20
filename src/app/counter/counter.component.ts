@@ -14,7 +14,11 @@ export class CounterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClick(): void {
-    this.num++;
+  onPlusClick(): void {
+    this.num = 1;
+  }
+
+  onMinusClick(): void {
+    this.num = -1;
   }
 }
