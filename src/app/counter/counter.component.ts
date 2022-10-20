@@ -7,6 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class CounterComponent implements OnInit {
   num = 0;
+  minusButtonVisible = true;
 
   constructor() {
   }
@@ -15,10 +16,16 @@ export class CounterComponent implements OnInit {
   }
 
   onPlusClick(): void {
-    this.num = 1;
+    this.num += 1;
+    if (this.num >= 0) {
+      this.minusButtonVisible = true;
+    }
   }
 
   onMinusClick(): void {
-    this.num = -1;
+    this.num -= 1;
+    if (this.num < 0) {
+      this.minusButtonVisible = false;
+    }
   }
 }
