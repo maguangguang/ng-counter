@@ -31,5 +31,8 @@ export class CounterComponent implements OnInit {
     if (this.num < 0) {
       this.minusButtonVisible = false;
     }
+    if (this.num <= 10) {
+      this.plusButtonVisible = true;
+    }
   }
 }

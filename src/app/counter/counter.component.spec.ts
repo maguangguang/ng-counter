@@ -48,11 +48,19 @@ describe('CounterComponent', () => {
     expect(component.minusButtonVisible).toBeTrue();
   });
 
-  it('should show - button when number is equal or larger than 0', () => {
+  it('should hide + button when number is larger than 10', () => {
     component.num = 10;
     component.plusButtonVisible = true;
     component.onPlusClick();
     expect(component.num).toEqual(11);
     expect(component.plusButtonVisible).toBeFalse();
+  });
+
+  it('should show + button when number is equal or less than 10', () => {
+    component.num = 11;
+    component.plusButtonVisible = false;
+    component.onMinusClick();
+    expect(component.num).toEqual(10);
+    expect(component.plusButtonVisible).toBeTrue();
   });
 });
