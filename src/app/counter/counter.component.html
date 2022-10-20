@@ -1,6 +1,6 @@
 <div>
   <button *ngIf="minusButtonVisible" (click)="onMinusClick()">-</button>
   <span>number: {{num}}</span>
-  <button (click)="onPlusClick()">+</button>
+  <button *ngIf="plusButtonVisible" (click)="onPlusClick()">+</button>
 </div>
 

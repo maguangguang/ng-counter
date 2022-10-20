@@ -47,4 +47,12 @@ describe('CounterComponent', () => {
     expect(component.num).toEqual(0);
     expect(component.minusButtonVisible).toBeTrue();
   });
+
+  it('should show - button when number is equal or larger than 0', () => {
+    component.num = 10;
+    component.plusButtonVisible = true;
+    component.onPlusClick();
+    expect(component.num).toEqual(11);
+    expect(component.plusButtonVisible).toBeFalse();
+  });
 });
