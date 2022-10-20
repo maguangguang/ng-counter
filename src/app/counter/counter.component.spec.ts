@@ -31,4 +31,20 @@ describe('CounterComponent', () => {
     component.onMinusClick();
     expect(component.num).toEqual(-1);
   });
+
+  it('should hide - button when number is less than 0', () => {
+    component.num = 0;
+    component.minusButtonVisible = true;
+    component.onMinusClick();
+    expect(component.num).toEqual(-1);
+    expect(component.minusButtonVisible).toBeFalse();
+  });
+
+  it('should show - button when number is equal or larger than 0', () => {
+    component.num = -1;
+    component.minusButtonVisible = false;
+    component.onPlusClick();
+    expect(component.num).toEqual(0);
+    expect(component.minusButtonVisible).toBeTrue();
+  });
 });
