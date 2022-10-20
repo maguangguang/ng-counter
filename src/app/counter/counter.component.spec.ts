@@ -1,6 +1,6 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {CounterComponent} from './counter.component';
+import {CounterComponent, GREEN_BACKGROUND} from './counter.component';
 
 describe('CounterComponent', () => {
   let component: CounterComponent;
@@ -62,5 +62,12 @@ describe('CounterComponent', () => {
     component.onMinusClick();
     expect(component.num).toEqual(10);
     expect(component.plusButtonVisible).toBeTrue();
+  });
+
+  it('should change text background to green when number less than 0', () => {
+    component.num = 0;
+    component.minusButtonVisible = true;
+    component.onMinusClick();
+    expect(component.textBackgroundColor).toEqual(GREEN_BACKGROUND);
   });
 });

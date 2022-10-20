@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 
+export const WHITE_BACKGROUND = "white";
+export const GREEN_BACKGROUND = "green";
+
 @Component({
   selector: 'app-counter',
   templateUrl: './counter.component.html',
@@ -9,6 +12,7 @@ export class CounterComponent implements OnInit {
   num = 0;
   minusButtonVisible = true;
   plusButtonVisible = true;
+  textBackgroundColor = WHITE_BACKGROUND;
 
   constructor() {
   }
@@ -30,6 +34,7 @@ export class CounterComponent implements OnInit {
     this.num -= 1;
     if (this.num < 0) {
       this.minusButtonVisible = false;
+      this.textBackgroundColor = GREEN_BACKGROUND;
     }
     if (this.num <= 10) {
       this.plusButtonVisible = true;
