@@ -23,23 +23,38 @@ export class CounterComponent implements OnInit {
 
   onPlusClick(): void {
     this.num += 1;
-    if (this.num >= 0) {
-      this.minusButtonVisible = true;
-    }
-    if (this.num > 10) {
-      this.plusButtonVisible = false;
-      this.textBackgroundColor = RED_BACKGROUND;
-    }
+    this.updateDisplayElements();
   }
 
   onMinusClick(): void {
     this.num -= 1;
+    this.updateDisplayElements();
+  }
+
+  onResetClick(): void {
+    this.num = 0;
+    this.updateDisplayElements();
+  }
+
+  private updateDisplayElements() {
+    this.updateMinusButtonVisible();
+    this.updatePlusButtonVisible();
+    this.updateTextBackgroundColor();
+  }
+
+  private updateMinusButtonVisible() {
+    this.minusButtonVisible = this.num >= 0;
+  }
+
+  private updateTextBackgroundColor() {
     if (this.num < 0) {
-      this.minusButtonVisible = false;
       this.textBackgroundColor = GREEN_BACKGROUND;
+    } else if (this.num > 10) {
+      this.textBackgroundColor = RED_BACKGROUND;
     }
-    if (this.num <= 10) {
-      this.plusButtonVisible = true;
-    }
+  }
+
+  private updatePlusButtonVisible() {
+    this.plusButtonVisible = this.num <= 10;
   }
 }

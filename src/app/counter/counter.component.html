@@ -1,4 +1,5 @@
 <div>
+  <button (click)="onResetClick()">reset</button>
   <button *ngIf="minusButtonVisible" (click)="onMinusClick()">-</button>
   <span [ngStyle]="{'background-color':textBackgroundColor}">number: {{num}}</span>
   <button *ngIf="plusButtonVisible" (click)="onPlusClick()">+</button>

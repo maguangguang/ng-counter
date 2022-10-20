@@ -1,6 +1,6 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {CounterComponent, GREEN_BACKGROUND, RED_BACKGROUND} from './counter.component';
+import {CounterComponent, GREEN_BACKGROUND, RED_BACKGROUND, WHITE_BACKGROUND} from './counter.component';
 
 describe('CounterComponent', () => {
   let component: CounterComponent;
@@ -78,5 +78,28 @@ describe('CounterComponent', () => {
     component.onPlusClick();
     expect(component.num).toEqual(11);
     expect(component.textBackgroundColor).toEqual(RED_BACKGROUND);
+  });
+
+  it('should change text background to white when number is equal or less than 10', () => {
+    component.num = 11;
+    component.onMinusClick();
+    expect(component.num).toEqual(10);
+    expect(component.textBackgroundColor).toEqual(WHITE_BACKGROUND);
+  });
+
+  it('should change text background to white when number is equal or larger than 0', () => {
+    component.num = -1;
+    component.onPlusClick();
+    expect(component.num).toEqual(0);
+    expect(component.textBackgroundColor).toEqual(WHITE_BACKGROUND);
+  });
+
+  it('should reset number to 0 when reset button clicked', () => {
+    component.num = -1;
+    component.onResetClick();
+    expect(component.num).toEqual(0);
+    expect(component.textBackgroundColor).toEqual(WHITE_BACKGROUND);
+    expect(component.plusButtonVisible).toBeTrue();
+    expect(component.minusButtonVisible).toBeTrue();
   });
 });
