@@ -51,6 +51,8 @@ export class CounterComponent implements OnInit {
       this.textBackgroundColor = GREEN_BACKGROUND;
     } else if (this.num > 10) {
       this.textBackgroundColor = RED_BACKGROUND;
+    } else {
+      this.textBackgroundColor = WHITE_BACKGROUND;
     }
   }
 

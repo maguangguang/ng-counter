@@ -82,6 +82,7 @@ describe('CounterComponent', () => {
 
   it('should change text background to white when number is equal or less than 10', () => {
     component.num = 11;
+    component.textBackgroundColor = RED_BACKGROUND;
     component.onMinusClick();
     expect(component.num).toEqual(10);
     expect(component.textBackgroundColor).toEqual(WHITE_BACKGROUND);
@@ -89,6 +90,7 @@ describe('CounterComponent', () => {
 
   it('should change text background to white when number is equal or larger than 0', () => {
     component.num = -1;
+    component.textBackgroundColor = GREEN_BACKGROUND;
     component.onPlusClick();
     expect(component.num).toEqual(0);
     expect(component.textBackgroundColor).toEqual(WHITE_BACKGROUND);
